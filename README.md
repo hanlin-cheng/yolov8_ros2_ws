@@ -10,8 +10,6 @@ ros2 humble
 
 torch==1.2.0
 
-yolo相关安装和训练配置可以参考[yolov8代码仓库](https://github.com/bubbliiiing/yolov8-pytorch)
-
 ## 说明
 
 根据自己的测试环境修改订阅话题和输出话题
@@ -41,7 +39,15 @@ def __init__(self):
     self.get_logger().info(f"Waiting for camera image...")
 ```
 
-## 运行
+## 编译与运行
+
+### YOLOV8部署
+
+接口想要正常运行需要先部署yolov8模型再编译ros2接口
+
+yolov8模型位于src/yolov8_main/yolov8_main/文件夹下面，具体配置方法可以参考文件夹下的[readme](src/yolov8_main/yolov8_main/README.md)文件
+
+## ros2部署
 
 ```
 colcon build
